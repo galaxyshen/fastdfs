@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 //fdht_func.c
@@ -20,10 +20,10 @@
 #include <string.h>
 #include <errno.h>
 #include <time.h>
-#include "logger.h"
-#include "sockopt.h"
-#include "shared_func.h"
-#include "ini_file_reader.h"
+#include "fastcommon/logger.h"
+#include "fastcommon/sockopt.h"
+#include "fastcommon/shared_func.h"
+#include "fastcommon/ini_file_reader.h"
 #include "fdht_func.h"
 
 int fdht_split_ids(const char *szIds, int **ppIds, int *id_count)

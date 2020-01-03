@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 #include <stdio.h>
@@ -14,7 +14,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include "fdfs_client.h"
-#include "logger.h"
+#include "fastcommon/logger.h"
 
 int main(int argc, char *argv[])
 {
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 			result, STRERROR(result));
 	}
 
-	tracker_disconnect_server_ex(pTrackerServer, true);
+	tracker_close_connection_ex(pTrackerServer, true);
 	fdfs_client_destroy();
 
 	return 0;

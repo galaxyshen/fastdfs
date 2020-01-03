@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 //fdht_func.h
@@ -24,7 +24,7 @@
 #include <errno.h>
 #include <time.h>
 #include "fdht_types.h"
-#include "ini_file_reader.h"
+#include "fastcommon/ini_file_reader.h"
 
 #ifdef __cplusplus
 extern "C" {

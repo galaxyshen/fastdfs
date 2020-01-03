@@ -7,13 +7,13 @@
 #include <unistd.h>
 #include <errno.h>
 #include <pthread.h>
-#include "logger.h"
+#include "fastcommon/logger.h"
 #include "fdfs_global.h"
 #include "tracker_global.h"
 #include "tracker_mem.h"
 #include "tracker_proto.h"
-#include "http_func.h"
-#include "sockopt.h"
+#include "fastcommon/http_func.h"
+#include "fastcommon/sockopt.h"
 #include "tracker_http_check.h"
 
 static pthread_t http_check_tid;
@@ -64,23 +64,13 @@ static void *http_check_entrance(void *arg)
 	{
 		if (g_http_check_type == FDFS_HTTP_CHECK_ALIVE_TYPE_TCP)
 		{
-			sock = socket(AF_INET, SOCK_STREAM, 0);
-			if(sock < 0)
-			{
-				result = errno != 0 ? errno : EPERM;
-				logError("file: "__FILE__", line: %d, " \
-					"socket create failed, errno: %d, " \
-					"error info: %s.", \
-					__LINE__, result, STRERROR(result));
-				sleep(1);
-				continue;
-			}
-
-			result = connectserverbyip_nb_auto(sock, \
-					(*ppServer)->ip_addr, \
-					(*ppGroup)->storage_http_port, \
-					g_fdfs_connect_timeout);
-			close(sock);
+            sock = socketClientAuto((*ppServer)->ip_addr,
+                    (*ppGroup)->storage_http_port,
+                    g_fdfs_connect_timeout, O_NONBLOCK, &result);
+            if (sock >= 0)
+            {
+                close(sock);
+            }
 
 			if (g_http_servers_dirty)
 			{

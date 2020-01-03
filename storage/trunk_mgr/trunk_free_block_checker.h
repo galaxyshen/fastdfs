@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 //trunk_free_block_checker.h
@@ -15,7 +15,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include <pthread.h>
-#include "common_define.h"
+#include "fastcommon/common_define.h"
 #include "fdfs_global.h"
 #include "tracker_types.h"
 #include "trunk_shared.h"

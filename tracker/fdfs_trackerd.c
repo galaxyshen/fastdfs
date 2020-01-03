@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 #include <stdio.h>
@@ -20,14 +20,14 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <pthread.h>
-#include "shared_func.h"
-#include "pthread_func.h"
-#include "process_ctrl.h"
-#include "logger.h"
+#include "fastcommon/shared_func.h"
+#include "fastcommon/pthread_func.h"
+#include "fastcommon/process_ctrl.h"
+#include "fastcommon/logger.h"
 #include "fdfs_global.h"
-#include "base64.h"
-#include "sockopt.h"
-#include "sched_thread.h"
+#include "fastcommon/base64.h"
+#include "fastcommon/sockopt.h"
+#include "fastcommon/sched_thread.h"
 #include "tracker_types.h"
 #include "tracker_mem.h"
 #include "tracker_service.h"
@@ -70,8 +70,10 @@ static void sigDumpHandler(int sig);
 
 static void usage(const char *program)
 {
-	fprintf(stderr, "Usage: %s <config_file> [start | stop | restart]\n",
-		program);
+	fprintf(stderr, "FastDFS server v%d.%02d\n"
+            "Usage: %s <config_file> [start | stop | restart]\n",
+            g_fdfs_version.major, g_fdfs_version.minor,
+            program);
 }
 
 int main(int argc, char *argv[])
@@ -100,6 +102,14 @@ int main(int argc, char *argv[])
 	log_init2();
 
 	conf_filename = argv[1];
+    if (!fileExists(conf_filename))
+    {
+        if (starts_with(conf_filename, "-"))
+        {
+            usage(argv[0]);
+            return 0;
+        }
+    }
 	if ((result=get_base_path_from_conf_file(conf_filename,
 		g_fdfs_base_path, sizeof(g_fdfs_base_path))) != 0)
 	{
@@ -441,6 +451,7 @@ static void sigQuitHandler(int sig)
 {
 	if (!bTerminateFlag)
 	{
+        tcp_set_try_again_when_interrupt(false);
 		set_timer(1, 1, sigAlarmHandler);
 
 		bTerminateFlag = true;

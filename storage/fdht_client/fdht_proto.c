@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 #include <sys/types.h>
@@ -16,9 +16,9 @@
 #include <errno.h>
 #include <time.h>
 #include "fdht_define.h"
-#include "shared_func.h"
-#include "logger.h"
-#include "sockopt.h"
+#include "fastcommon/shared_func.h"
+#include "fastcommon/logger.h"
+#include "fastcommon/sockopt.h"
 #include "fdht_types.h"
 #include "fdht_proto.h"
 

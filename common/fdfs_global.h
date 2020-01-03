@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 //fdfs_global.h
@@ -11,9 +11,9 @@
 #ifndef _FDFS_GLOBAL_H
 #define _FDFS_GLOBAL_H
 
-#include "common_define.h"
+#include "fastcommon/common_define.h"
 #include "fdfs_define.h"
-#include "connection_pool.h"
+#include "fastcommon/connection_pool.h"
 
 #define FDFS_FILE_EXT_NAME_MAX_LEN	6
 

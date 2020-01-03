@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 //tracker_service.h
@@ -15,8 +15,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "fdfs_define.h"
-#include "ioevent.h"
-#include "fast_task_queue.h"
+#include "fastcommon/ioevent.h"
+#include "fastcommon/fast_task_queue.h"
 
 #ifdef __cplusplus
 extern "C" {

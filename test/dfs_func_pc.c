@@ -6,9 +6,9 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include "fdfs_global.h"
+#include "fastdfs/fdfs_global.h"
 #include "dfs_func.h"
-#include "fdfs_client.h"
+#include "fastdfs/fdfs_client.h"
 
 static ConnectionInfo *pTrackerServer;
 static ConnectionInfo storage_servers[FDFS_MAX_SERVERS_EACH_GROUP];
@@ -80,7 +80,7 @@ void dfs_destroy()
 	ConnectionInfo *pEnd;
 	ConnectionInfo *pServer;
 
-	tracker_disconnect_server(pTrackerServer);
+	tracker_close_connection(pTrackerServer);
 
 	pEnd = storage_servers + storage_server_count;
 	for (pServer=storage_servers; pServer<pEnd; pServer++)

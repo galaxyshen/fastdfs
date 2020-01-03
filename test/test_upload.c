@@ -8,8 +8,8 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <sys/mman.h>
-#include "common_define.h"
-#include "logger.h"
+#include "fastcommon/common_define.h"
+#include "fastcommon/logger.h"
 #include "test_types.h"
 #include "common_func.h"
 #include "dfs_func.h"
@@ -120,12 +120,10 @@ int main(int argc, char **argv)
 		return result;
 	}
 
-#ifndef WIN32
-	if (daemon(1, 1) != 0)
+    if ((result=my_daemon_init()) != 0)
 	{
-		return errno != 0 ? errno : EFAULT;
+		return result;
 	}
-#endif
 
 	memset(&storages, 0, sizeof(storages));
 	upload_count = 0;

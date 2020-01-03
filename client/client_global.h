@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 //client_global.h
@@ -11,7 +11,7 @@
 #ifndef _CLIENT_GLOBAL_H
 #define _CLIENT_GLOBAL_H
 
-#include "common_define.h"
+#include "fastcommon/common_define.h"
 #include "tracker_types.h"
 #include "fdfs_shared_func.h"
 

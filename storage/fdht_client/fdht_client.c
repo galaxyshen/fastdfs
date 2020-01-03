@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 #include <stdio.h>
@@ -13,11 +13,11 @@
 #include <string.h>
 #include <errno.h>
 #include <sys/types.h>
-#include "sockopt.h"
-#include "logger.h"
-#include "hash.h"
-#include "shared_func.h"
-#include "ini_file_reader.h"
+#include "fastcommon/sockopt.h"
+#include "fastcommon/logger.h"
+#include "fastcommon/hash.h"
+#include "fastcommon/shared_func.h"
+#include "fastcommon/ini_file_reader.h"
 #include "fdht_types.h"
 #include "fdht_proto.h"
 #include "fdht_global.h"

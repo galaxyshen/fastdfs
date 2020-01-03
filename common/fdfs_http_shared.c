@@ -4,7 +4,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 #include <time.h>
@@ -18,9 +18,9 @@
 #include <sys/stat.h>
 #include <netinet/in.h>
 #include <fcntl.h>
-#include "logger.h"
-#include "md5.h"
-#include "shared_func.h"
+#include "fastcommon/logger.h"
+#include "fastcommon/md5.h"
+#include "fastcommon/shared_func.h"
 #include "mime_file_parser.h"
 #include "fdfs_global.h"
 #include "fdfs_http_shared.h"

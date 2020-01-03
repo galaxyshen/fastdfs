@@ -3,7 +3,7 @@
 *
 * FastDFS may be copied only under the terms of the GNU General
 * Public License V3, which may be found in the FastDFS source kit.
-* Please visit the FastDFS Home Page http://www.csource.org/ for more detail.
+* Please visit the FastDFS Home Page http://www.fastken.com/ for more detail.
 **/
 
 #ifndef _FDFS_HTTP_SHARED_H
@@ -14,8 +14,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "ini_file_reader.h"
-#include "hash.h"
+#include "fastcommon/ini_file_reader.h"
+#include "fastcommon/hash.h"
 
 typedef struct
 {
