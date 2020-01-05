@@ -45,7 +45,7 @@ end
 -- 开始执行
  ngx.log(ngx.ERR, getFileDir(ngx.var.img_file));
 
-local gm_path = /usr/local/GraphicsMagick/bin/gm
+local gm_path = /usr/local/bin/gm
 
 -- check image dir
 if not is_dir(getFileDir(ngx.var.img_file)) then

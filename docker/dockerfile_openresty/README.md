@@ -43,6 +43,9 @@ Note that you need to specify the host IP when running the container with the pa
 Here's a sample docker run instruction
 ```
 docker run -d -e FASTDFS_IPADDR=192.168.1.234 -p 8888:8888 -p 22122:22122 -p 23000:23000 -p 8011:80 --name test-fast 镜像id/镜像名称
+测试图片上传
+docker exec -it test-fast /bin/sh
+/usr/bin/fdfs_upload_file /etc/fdfs/client.conf namei.jpeg
 ```
 
 ## Epilogue

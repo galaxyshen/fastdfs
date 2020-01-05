@@ -12,7 +12,10 @@ cat  /etc/fdfs/storage.conf >  /etc/fdfs/storage.txt
 cat  /etc/fdfs/mod_fastdfs.conf > /etc/fdfs/mod_fastdfs.txt
 
 mv /usr/local/openresty/nginx/conf/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf.t
+cp -r /usr/local/src/lua /usr/local/openresty/nginx/conf/lua
 cp /etc/fdfs/nginx.conf /usr/local/openresty/nginx/conf
+
+rm -rf /usr/local/src
 
 echo "start trackerd"
 /etc/init.d/fdfs_trackerd start
