@@ -45,11 +45,11 @@ end
 -- 开始执行
  ngx.log(ngx.ERR, getFileDir(ngx.var.img_file));
 
-local gm_path = /usr/local/bin/gm
+local gm_path = 'gm'
 
 -- check image dir
 if not is_dir(getFileDir(ngx.var.img_file)) then
-        ngx.log(ngx.ERR, create dir);
+        ngx.log(ngx.ERR, 'create dir');
     os.execute("mkdir -p " .. getFileDir(ngx.var.img_file))
 end
 
@@ -59,7 +59,7 @@ end
 -- 裁剪后保证等比缩图 （缺点：裁剪了图片的一部分）
 -- gm convert cropSize.jpg -thumbnail 300x300^ -gravity center -extent 300x300 -quality 100 +profile "*" cropSize.jpg_300x300.jpg
 if (file_exists(ngx.var.request_filepath)) then
-    local cmd = gm_path ..  convert  .. ngx.var.request_filepath
+    local cmd = gm_path .. ' convert ' .. ngx.var.request_filepath
     cmd = cmd .. " -thumbnail " .. ngx.var.img_width .. "x" .. ngx.var.img_height .. "^"
     cmd = cmd .. " -gravity center -extent " .. ngx.var.img_width .. "x" .. ngx.var.img_height
 

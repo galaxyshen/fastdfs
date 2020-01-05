@@ -49,7 +49,7 @@ end
 -- 开始执行
 -- ngx.log(ngx.ERR, getFileDir(ngx.var.img_file));
 
-local gm_path = /usr/local/bin/gm
+local gm_path = '/usr/local/GraphicsMagick/bin/gm'
 
 -- check image dir
 if not is_dir(getFileDir(ngx.var.img_file)) then
@@ -76,7 +76,7 @@ end
 -- 裁剪后保证等比缩图 （缺点：裁剪了图片的一部分）
 -- 如: gm convert autoSize.jpg -resize x200 -quality 100 +profile "*" autoSize.jpg_-200.jpg
 if (file_exists(ngx.var.request_filepath)) then
-    local cmd = gm_path ..  convert  .. ngx.var.request_filepath
+    local cmd = gm_path .. ' convert ' .. ngx.var.request_filepath
     if height == 0 then
         cmd = cmd .. " -resize " .. width .. "x" ..  ""
     else

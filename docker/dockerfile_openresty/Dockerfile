@@ -27,6 +27,7 @@ RUN yum install git gcc gcc-c++ make automake autoconf libtool pcre pcre-devel z
   &&    tar -xvf GraphicsMagick-1.3.29.tar      \
   &&    mkdir -p /home/dfs/{tracker,storage}    \
   &&    mkdir /usr/local/GraphicsMagick   \
+  &&    mkdir /home/thumb   \
   &&    cd /usr/local/src/  \
   &&    cd libfastcommon/   \
   &&    ./make.sh && ./make.sh install  \
